@@ -3,34 +3,37 @@ import styled from 'styled-components'
 import "./App.css";
 import { useState } from 'react';
 import { useEffect } from 'react';
+import SearchResult from './component/searchResult/SearchResult';
 
 const BASE_URL = "http://localhost:9000/"
 
 const App = () => {
 
     const [data, setData] = useState("");
-    const [loading,setLoading]=useState(false);
-    const [error,setError]=useState("");
-    useEffect(()=>{
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+//    console.log(data)
+    useEffect(() => {
 
-        const fetchFoodData=async()=>{
+        const fetchFoodData = async () => {
             setLoading(true)
-            
-            
+
+
             try {
-                const responce =await fetch(BASE_URL)
-                const json =  await responce.json()
-               
-                console.log(json);
-                
+                const responce = await fetch(BASE_URL)
+                const json = await responce.json()
+                // console.log(json);
+                setData(json)
+
+
+
             } catch (error) {
                 setError("Unable to fetch data");
-                
             }
-            
+
         }
         fetchFoodData();
-    },[])
+    }, [])
     return (
         <MainContainer>
             <TopContainer>
@@ -43,6 +46,7 @@ const App = () => {
                 </div>
             </TopContainer>
             <FilterComponent>
+
                 <Button>All
                 </Button>
                 <Button>Breakfast
@@ -52,12 +56,13 @@ const App = () => {
                 <Button>Dinner
                 </Button>
             </FilterComponent>
-            <FoodContainer>
-                <div className="background">
-                    {/* <img src="bg.png" alt="" /> */}
-                </div>
-            </FoodContainer>
+
+            {/* passing data as a pros */}
+            <SearchResult  data={data}/>
+            
+           
         </MainContainer>
+        
     )
 }
 
@@ -106,14 +111,4 @@ cursor:pointer;
 
 
 
-`
-const FoodContainer = styled.div`
-background-image:url("/bg.png");
-// backgrounds-size:cover;
-height:calc(100vh - 200px);
-padding:20px;
-margin:10px;
-
-
-}
 `
