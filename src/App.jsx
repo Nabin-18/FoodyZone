@@ -8,7 +8,7 @@ import SearchResult from './component/searchResult/SearchResult';
 
 
 
-// const BASE_URL = "http://localhost:9000/"
+const BASE_URL = "http://localhost:9000/"
 
 
 
@@ -17,50 +17,50 @@ import SearchResult from './component/searchResult/SearchResult';
 
 
 const App = () => {
-     const foodData = [
-    {
-      name: "Boilded Egg",
-      price: 10,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-      image: "/images/egg.png",
-      type: "breakfast",
-    },
-    {
-      name: "RAMEN",
-      price: 25,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-      image: "/images/ramen.png",
-      type: "lunch",
-    },
-    {
-      name: "GRILLED CHICKEN",
-      price: 45,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-      image: "/images/chicken.png",
-      type: "dinner",
-    },
-    {
-      name: "CAKE",
-      price: 18,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-      image: "/images/cake.png",
-      type: "breakfast",
-    },
-    {
-      name: "BURGER",
-      price: 23,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-      image: "/images/burger.png",
-      type: "lunch",
-    },
-    {
-      name: "PANCAKE",
-      price: 25,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-      image: "/images/pancake.png",
-      type: "dinner",
-    },
-  ];
+    //      const foodData = [
+    //     {
+    //       name: "Boilded Egg",
+    //       price: 10,
+    //       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    //       image: "/images/egg.png",
+    //       type: "breakfast",
+    //     },
+    //     {
+    //       name: "RAMEN",
+    //       price: 25,
+    //       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    //       image: "/images/ramen.png",
+    //       type: "lunch",
+    //     },
+    //     {
+    //       name: "GRILLED CHICKEN",
+    //       price: 45,
+    //       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    //       image: "/images/chicken.png",
+    //       type: "dinner",
+    //     },
+    //     {
+    //       name: "CAKE",
+    //       price: 18,
+    //       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    //       image: "/images/cake.png",
+    //       type: "breakfast",
+    //     },
+    //     {
+    //       name: "BURGER",
+    //       price: 23,
+    //       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    //       image: "/images/burger.png",
+    //       type: "lunch",
+    //     },
+    //     {
+    //       name: "PANCAKE",
+    //       price: 25,
+    //       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    //       image: "/images/pancake.png",
+    //       type: "dinner",
+    //     },
+    //   ];
 
     const [data, setData] = useState("");
     const [loading, setLoading] = useState(false);
@@ -89,11 +89,11 @@ const App = () => {
     }, [])
     return (
         <div className='main-container'>
-           
 
-                <MainContainer />
-                <SearchResult  FoodData={foodData}/>
-          
+
+            <MainContainer />
+            <SearchResult foodData={data} />
+
 
         </div>
 
