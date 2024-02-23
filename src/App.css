@@ -1,9 +1,46 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   background-color: #323332;
-
+}
+.main_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.top_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 140px;
+  margin: 0 20px;
+}
+.search input {
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid red;
+  background-color: transparent;
+  outline: none;
+}
+.filter_component {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.filter_component button {
+  background-color: red;
+  border-radius: 8px;
+  padding: 8px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.food_container {
+  background-image: url("/bg.png");
+  height: calc(100vh - 200px);
+  padding: 20px;
+  margin: 10px;
 }

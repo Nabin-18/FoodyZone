@@ -1,34 +1,25 @@
 import React from 'react'
-import styled from 'styled-components'
 
-function SearchResult({data}) {
-    // console.log(data)
-    return (
-        <FoodContainer>
-            <FoodCards>
-              {
-                data.map((food)=>{
-                    <foodCard key={food.name}>
-                    {food.text}
-                    </foodCard>
-                })
-              }
+const SearchResult = ({ FoodData}) => {
+  console.log(FoodData);
+  return (
+    <div className="food_container">
+    {
+      <div className='food_items'  key={FoodData.name}>
+      {
+       FoodData.map((value)=>{
+        <div>
+        <p>{FoodData.text}</p>
+        </div>
+       })
+      }
+      </div>
+    }
+    
 
-            </FoodCards>
-        </FoodContainer>
-    )
+
+    </div>
+  )
 }
 
 export default SearchResult
-const FoodContainer = styled.div`
-background-image:url("/bg.png");
-// backgrounds-size:cover;
-height:calc(100vh - 200px);
-padding:20px;
-margin:10px;
-
-
-}
-`
-const FoodCards = styled.div``;
-const foodCard = styled.div``;
